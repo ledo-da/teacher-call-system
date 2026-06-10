@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선생님 관제 및 알림 시스템</title>
+    <link rel="stylesheet" href="receiver-style.css">
+</head>
+<body>
+    <div id="loginSection" class="card">
+        <h2>선생님 로그인</h2>
+        <p style="color: #666; font-size: 0.9rem;">테스트 계정: teacher / 1234</p>
+        <input type="text" id="username" placeholder="아이디">
+        <input type="password" id="password" placeholder="비밀번호">
+        <button id="loginBtn">로그인</button>
+    </div>
+
+    <div id="mainSection" class="dashboard hidden">
+        <div class="panel">
+            <h2>🔔 실시간 호출 알림</h2>
+            <div id="loginStatus" style="font-weight: bold; color: #3498db; margin-bottom: 15px;"></div>
+            <div id="alertBox" class="alert-box hidden">
+                <h3>🚨 새로운 호출!</h3>
+                <p><strong>발신 학생:</strong> <span id="alertSender"></span></p>
+                <p><strong>내용:</strong> <span id="alertContent"></span></p>
+                <span id="alertTime" style="font-size: 0.8rem; color:#666;"></span>
+                <button id="closeAlertBtn" style="margin-top:10px; background-color:#28a745;">확인 완료</button>
+            </div>
+            <p id="noNotification">현재 들어온 호출이 없습니다.</p>
+        </div>
+
+        <div class="panel">
+            <h2>👥 신규 가입 학생 명단</h2>
+            <ul id="studentRegisterList">
+                </ul>
+        </div>
+    </div>
+
+    <script src="receiver-script.js"></script>
+</body>
+</html>
